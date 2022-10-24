@@ -9,4 +9,5 @@ void UCAAssetManager::StartInitialLoading()
 	Super::StartInitialLoading();
 	
 	UAbilitySystemGlobals::Get().InitGlobalData();
+	UE_LOG(LogTemp, Warning, TEXT("<<CA>> %s -- AT LINE :: %d"), *FString(__FUNCTION__), __LINE__);
 }
