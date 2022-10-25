@@ -8,10 +8,16 @@ void UCACharacterAttributeSetBase::GetLifetimeReplicatedProps(TArray<class FLife
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	
+	DOREPLIFETIME_CONDITION_NOTIFY(UCACharacterAttributeSetBase, CharacterLevel, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UCACharacterAttributeSetBase, Health, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UCACharacterAttributeSetBase, MaxHealth, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UCACharacterAttributeSetBase, Mana, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UCACharacterAttributeSetBase, MaxMana, COND_None, REPNOTIFY_Always);
+}
+
+void UCACharacterAttributeSetBase::OnRep_CharacterLevel(const FGameplayAttributeData& OldCharacterLevel)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UCACharacterAttributeSetBase, CharacterLevel, OldCharacterLevel);
 }
 
 void UCACharacterAttributeSetBase::OnRep_Health(const FGameplayAttributeData& OldHealth)
