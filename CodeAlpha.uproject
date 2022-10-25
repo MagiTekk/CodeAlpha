@@ -10,7 +10,8 @@
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
 				"Engine",
-				"GameplayAbilities"
+				"GameplayAbilities",
+				"AIModule"
 			]
 		}
 	],
@@ -26,5 +27,8 @@
 			"Name": "GameplayAbilities",
 			"Enabled": true
 		}
+	],
+	"TargetPlatforms": [
+		"Windows"
 	]
 }
