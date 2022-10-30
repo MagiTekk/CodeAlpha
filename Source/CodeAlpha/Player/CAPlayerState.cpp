@@ -22,6 +22,7 @@ ACAPlayerState::ACAPlayerState()
 	// Set PlayerState's NetUpdateFrequency to the same as the Character.
 	// Default is very low for PlayerStates and introduces perceived lag in the ability system.
 	// 100 is probably way too high for a shipping game, you can adjust to fit your needs.
+	// #TODO_esonderblohm adjust update frequency, try some values.
 	NetUpdateFrequency = 100.0f;
 
 	// Cache tags
